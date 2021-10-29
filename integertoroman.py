@@ -1,4 +1,4 @@
-class Solution:
+iclass Solution:
     def get_digit(number, n):
         return number // 10**n % 10
     
@@ -19,7 +19,8 @@ class Solution:
         #D is 500
         #M is 
         #1 to 3999
-        # process flow from ones to 5s  tens to 50s to hundreds 5o 500 to 1000
+        # process flow get thousands, hundreds, tens, ones digits. convert to rn and a
+        #append for each digit
         
         if thou > 0:
             print('>t1000')
@@ -31,11 +32,11 @@ class Solution:
             if hund == 9:
                 roman += 'CM'
             elif hund == 8:
-                roman += 'DXXX'  
+                roman += 'DCCC'  
             elif hund == 7:
-                roman += 'DXX'    
+                roman += 'DCC'    
             elif hund == 6:
-                roman += 'DX'
+                roman += 'DC'
             elif hund == 5:
                 roman += 'D'   
             elif hund == 4:
@@ -55,96 +56,30 @@ class Solution:
             elif tens == 6:
                 roman += 'LX'
             elif tens == 5:
-                roman += 'D'   
+                roman += 'L'   
             elif tens == 4:
-                roman += 'XD'
+                roman += 'XL'
             else:
                 for i in range(0,tens):
                     roman += 'X'
                     
         if ones > 0:
             print('>t1')
-            if tens == 9:
+            if ones == 9:
                 roman += 'IX'
-            elif tens == 8:
+            elif ones == 8:
                 roman += 'VIII'  
-            elif tens == 7:
+            elif ones == 7:
                 roman += 'VII'    
-            elif tens == 6:
+            elif ones == 6:
                 roman += 'VI'
-            elif tens == 5:
+            elif ones == 5:
                 roman += 'V'   
-            elif tens == 4:
-                roman += 'iV'
-            else:
-                for i in range(0,tens):
-                    roman += 'I'
-        
-        if num <=5:
-            print('lt5')
-            if num == 4:
+            elif ones == 4:
                 roman += 'IV'
-            elif num == 5:
-                roman += 'V'
             else:
-                for i in range(0,num):
+                for i in range(0,ones):
                     roman += 'I'
-                    
-        elif num <= 10:
-            print('lt10')
-            if num == 9:
-                roman += 'IX'
-            elif num == 10:
-                roman += 'X'
-            else:
-                roman += 'V'
-                for i in range(0,int(num/10)):
-                    roman += 'I'
-                    
-        elif num <=50:
-            print('lt50')
-            if num == 40:
-                roman += 'XL'
-            elif num == 50:
-                roman += 'L'
-            else:
-                for i in range(0,(int(num/10))):
-                    roman += 'X'
-                    
-        elif num <= 100:
-            print('lt100')
-            if num == 90:
-                roman += 'XC'
-            elif num == 100:
-                roman += 'C'
-            else:
-                roman += 'L'
-                for i in range(0,int((num-50)/10)):
-                    roman += 'X'   
-                    
-                    
-        elif num <=500:
-            print('lt500')
-            if num == 400:
-                roman += 'CD'
-            elif num == 500:
-                roman += 'D'
-            else:
-                for i in range(0,int((num)/100)):
-                    roman += 'C'
-            
-        elif num <= 1000:
-            print('lt1000')
-            if num == 900:
-                roman += 'CM'
-            elif num == 1000:
-                roman += 'M'
-            else:
-                roman += 'D'
-                for i in range(0,int((num-500)/100)):
-                    roman += 'C'
-
-
         return roman
         
 
