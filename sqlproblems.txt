@@ -1,0 +1,8 @@
+
+
+
+#left join for all in left Person table and null if no address....
+select firstName, lastName, city, state from Person Left JOIN Address
+ON Person.personId = Address.personId
+
+https://leetcode.com/problems/combine-two-tables/submissions/
