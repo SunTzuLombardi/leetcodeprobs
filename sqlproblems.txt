@@ -6,3 +6,6 @@ select firstName, lastName, city, state from Person Left JOIN Address
 ON Person.personId = Address.personId
 
 https://leetcode.com/problems/combine-two-tables/submissions/
+
+select count(city) - count(distinct City) from Station;
+https://www.hackerrank.com/challenges/weather-observation-station-4/problem
