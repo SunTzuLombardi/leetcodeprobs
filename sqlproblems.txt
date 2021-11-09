@@ -18,3 +18,9 @@ limit 1;
 select city, length(city) from station
 order by length(city) desc
 limit 1;
+
+https://leetcode.com/problems/duplicate-emails/
+# Write your MySQL query statement below
+select email from Person having count(*) >1
+
+
