@@ -26,3 +26,9 @@ select email from Person having count(*) >1
 i# Write your MySQL query statement below
 select name as Customers from customers where id not in (select customerId from Orders)
 https://leetcode.com/problems/customers-who-never-order
+
+SELECT name AS Customers
+FROM Customers AS c
+LEFT JOIN Orders AS o
+    ON c.id = o.customerId
+WHERE o.id IS null
