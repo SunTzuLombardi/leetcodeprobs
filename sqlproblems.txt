@@ -23,4 +23,6 @@ https://leetcode.com/problems/duplicate-emails/
 # Write your MySQL query statement below
 select email from Person having count(*) >1
 
-
+i# Write your MySQL query statement below
+select name as Customers from customers where id not in (select customerId from Orders)
+https://leetcode.com/problems/customers-who-never-order
