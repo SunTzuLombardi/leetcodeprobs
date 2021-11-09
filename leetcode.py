@@ -17,3 +17,15 @@ class Solution:
             return True
         else:
             return False
+
+https://leetcode.com/problems/length-of-last-word
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        #Split by spaces
+        words = s.split()
+        #get last word
+        #-1 means the last element of the list
+        lword = words[-1]
+        #return length of last word
+        #splitting the string
+        return len(lword)
