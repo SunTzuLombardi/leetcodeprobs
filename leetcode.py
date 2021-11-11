@@ -148,3 +148,40 @@ https://leetcode.com/problems/climbing-stairs/
 
 
 
+        #The idea is that the number of 2-steps that we can take
+        #is limited by the total steps of the stairs. Hence, we
+        #can find out the total number of 2-steps we can make via
+        #int(n/2)
+        #For example, if the total steps of the stairs is 5,
+        #we can only take 2-steps twice and
+        #remaining 1-step - (2steps + 2steps + 1step)
+        #note that this is just one combination. We
+        #need #to find out the permutation for this set of steps,
+        #which is calculated using:
+
+        #factorial(max no. of 1-step + max no. of 2-step) /
+        #( factorial(max no. of 1-step) * factorial(max no. of 2-step) )
+
+        #Once we know the total number of 2-steps we can make,
+        #the number of 1-step is easily obtained via
+
+        #n - 2 * (max no. of 2-steps)
+        #And we loop through the possibilities of no. of 2-steps:
+        def factorial(n):
+            if n == 0:
+                return 1
+            else:
+                return n * factorial(n-1)
+
+        counter = 0
+        for i in range(0, int(n/2) + 1):
+            # i represents the current number of 2-steps
+            # int(n/2) is the max. no. of 2-steps
+            num_2steps = i
+            num_1steps = n - 2*i
+            total_climbs = num_1steps + num_2steps
+            counter += factorial(total_climbs) / ( factorial(num_1steps) * factorial(num_2steps) )
+
+        return int(counter)
+
+
