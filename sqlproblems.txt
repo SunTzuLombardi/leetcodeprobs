@@ -32,3 +32,9 @@ FROM Customers AS c
 LEFT JOIN Orders AS o
     ON c.id = o.customerId
 WHERE o.id IS null
+
+# Write your MySQL query statement below
+select Email
+from Person
+group by Email
+having count(Email) > 1;
