@@ -119,3 +119,32 @@ class Solution:
             tail.next = l2 
  
         return merged.next
+
+https://leetcode.com/problems/climbing-stairs/
+    class Solution:
+    def climbStairs(self, n: int) -> int:
+        #distinct ways of climbing too the top either using 1 or 2 steps
+        #take all steps of 1
+        #take all steps of 2 then 1 if needed
+        #take first step of 2 then steps of 1
+        # 
+        #this is a combination problem
+        ###2 solutions...store previous steps result in hastable and if there add to it....or
+        #calculate the permutations...
+        
+        #first way
+        #ways =0
+        #if n==1:
+        #    ways = 1
+        #elif n==2:
+        #    ways = 2
+        #elif n==3:
+        #    ways = 3
+        #else:
+        #    ways = self.climbStairs(n-1)+self.climbStairs(n-2)
+            
+        #return ways
+
+
+
+
