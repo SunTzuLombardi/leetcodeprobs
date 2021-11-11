@@ -73,3 +73,9 @@ GROUP BY class
 having count(student)>=5;
 
 
+https://leetcode.com/problems/not-boring-movies/submissions/
+# Write your MySQL query statement below
+select id, movie, description, rating from Cinema
+where id mod 2 = 1 and description != 'boring'
+order by rating desc
+
