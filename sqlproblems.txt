@@ -38,3 +38,14 @@ select Email
 from Person
 group by Email
 having count(Email) > 1;
+
+
+https://leetcode.com/problems/delete-duplicate-emails/submissions/
+# Write your MySQL query statement below
+DELETE FROM PERSON
+WHERE ID IN (
+SELECT ID FROM
+(SELECT P.*, ROW_NUMBER() OVER (PARTITION BY P.EMAIL ORDER BY P.ID) NUM
+FROM PERSON P
+)C WHERE NUM > 1
+)
