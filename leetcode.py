@@ -29,3 +29,58 @@ class Solution:
         #return length of last word
         #splitting the string
         return len(lword)
+
+
+https://leetcode.com/problems/merge-two-sorted-lists/
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+
+
+    def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        def insert(root, item):
+            temp = ListNode(item)
+
+            if (root == None):
+                root = temp
+            else :
+                ptr = root
+                while (ptr.next != None):
+                    ptr = ptr.next
+                    ptr.next = temp
+
+            return root
+
+        merged = ListNode()
+
+        #if both None return None
+        if l1 is None and l2 is None:
+            return None
+        elif (l1 or l2) is None:
+            #if either is None return the other
+            print('l1 is none')
+            merged = l1 if l2 is None else l2
+        else:
+            #idea make two lists from traversing the nodes combine then create ListNode
+            first = []
+            while l1 is not None:
+                first.append(l1.val)
+                l1 = l1.next
+
+            sec = []
+            while l2 is not None:
+                sec.append(l2.val)
+                l2 = l2.next
+
+            first += sec
+            first = sorted(first)
+            print(first)
+
+            for i in range(0,len(first)):
+                merged = insert(merged, first[i])
+
+
+        return merged
