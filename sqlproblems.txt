@@ -88,3 +88,24 @@ FROM OCCUPATIONS
 GROUP BY Occupation
 ORDER By COUNT(Occupation), Occupation
 
+
+
+
+#https://www.hackerrank.com/challenges/occupations/problem?h_r=next-challenge&h_v=zen
+/*
+Enter your query here.
+*/
+
+SELECT name
+FROM
+    (select name from occupations)
+    AS names
+PIVOT
+(
+    count(occupation)
+FOR
+[occupation]
+    IN ( name)
+) AS pvt
+ORDER BY name;
+
