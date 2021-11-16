@@ -79,3 +79,12 @@ select id, movie, description, rating from Cinema
 where id mod 2 = 1 and description != 'boring'
 order by rating desc
 
+#occupations hackerrank medioum
+SELECT CONCAT(Name, "(", MID(Occupation, 1, 1), ")")
+FROM OCCUPATIONS
+ORDER BY Name;
+SELECT CONCAT("There are a total of ", COUNT(Occupation)," ", LOWER(Occupation), "s.")
+FROM OCCUPATIONS
+GROUP BY Occupation
+ORDER By COUNT(Occupation), Occupation
+
