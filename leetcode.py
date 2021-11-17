@@ -187,3 +187,18 @@ https://leetcode.com/problems/climbing-stairs/
 #nice teams
 when match i+2
 else j+1
+Sort the array in ascending order.
+for ex: n=8; rating=[14,18,30,45,43,2,8,3]; minDiff=4;
+After sorting [2,3,8,14,18,30,43,45]
+Answer is in bold: [2,3,8,14,18,30,43,45]
+
+It can be solved with greedy approach
+Pseudo Code:
+Array is sorted in ascending order.
+int i=0; int Pairs=0;
+while(i+1 < n)
+{
+if(abs(A[i]-A[i+1]) <= minDiff)
+Pairs++; i+=2;
+else
+i++;
