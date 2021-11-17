@@ -246,3 +246,15 @@ def luckBalance(k, contests):
     return bal
 
 
+    https://www.hackerrank.com/challenges/greedy-florist/problem
+def getMinimumCost(k, c):
+    mincost=0
+    c.sort(reverse=True)
+    l = len(c)
+    #last person buys most expensive flower
+    for i in range(l):
+        print(mincost,(int(i/k)+1)*c[i] )
+        mincost=mincost + (int(i/k)+1)*c[i]
+
+    return mincost
+
