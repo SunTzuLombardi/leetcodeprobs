@@ -131,3 +131,18 @@ SELECT CASE
             ELSE 'Not A Triangle'
         END
 FROM TRIANGLES;
+--company_code, founder_name, total number of lead managers, total number of senior managers, total number of managers, and total number of employees. Order your output by ascending company_code.
+https://www.hackerrank.com/challenges/the-company/problem
+select Company.company_code, Company.founder,
+count(distinct Lead_Manager.lead_manager_code),
+count(distinct Senior_Manager.senior_manager_code),
+count(distinct Manager.manager_code),
+count(distinct Employee.employee_code)
+from ((((Company
+inner join Lead_Manager on Company.company_code = Lead_Manager.company_code)
+inner join Senior_Manager ON Lead_Manager.lead_manager_code = Senior_Manager.lead_manager_code)
+inner join Manager On Manager.senior_manager_code = Senior_Manager.senior_manager_code)            inner join Employee On Employee.manager_code = Manager.manager_code)
+group by Company.company_code, Company.founder
+order by Company.company_code asc;
+
+
