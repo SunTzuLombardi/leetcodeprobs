@@ -220,4 +220,29 @@ def minimumAbsoluteDifference(arr):
         if differ<minabs :
             minabs = differ
     return min(cache)
-    :
+
+
+https://www.hackerrank.com/challenges/luck-balance
+def luckBalance(k, contests):
+    # Write your code here
+    bal=0
+    luck=0
+    imp=-1
+    #sort to have highest value first
+    #if impor is 0 then 
+    contests.sort(reverse=True)
+    for cont in contests:
+        luck=cont[0]
+        imp=cont[1]
+        print(k,luck,imp)
+        #num to lose do imp =0 first
+        if imp ==0:
+            bal = bal+luck
+        elif k>0:
+            bal = bal+luck
+            k=k-1
+        else:
+            bal = bal-luck
+    return bal
+
+
