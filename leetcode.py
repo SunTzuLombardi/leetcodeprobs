@@ -202,3 +202,22 @@ if(abs(A[i]-A[i+1]) <= minDiff)
 Pairs++; i+=2;
 else
 i++;
+
+https://www.hackerrank.com/challenges/minimum-absolute-difference-in-an-array
+def minimumAbsoluteDifference(arr):
+    # Write your code here
+
+    cache = []
+    arr=sorted(arr)
+    minabs=abs(max(arr)-min(arr))
+    print(arr)
+    n=len(arr)
+    i=0
+    for i in range(n-1):
+        differ=abs(arr[i+1]-arr[i])
+        cache.append(differ)
+
+        if differ<minabs :
+            minabs = differ
+    return min(cache)
+    :
