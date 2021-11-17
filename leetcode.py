@@ -184,4 +184,6 @@ https://leetcode.com/problems/climbing-stairs/
 
         return int(counter)
 
-
+#nice teams
+when match i+2
+else j+1
