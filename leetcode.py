@@ -258,3 +258,23 @@ def getMinimumCost(k, c):
 
     return mincost
 
+
+https://leetcode.com/problems/pascals-triangle/
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        tri = []
+
+        #create a 2D array for the result
+        for i in range(numRows):
+            tri.append([1]*(i+1))
+
+        #do the sums by looking at each row starting at 2
+        #sum the m and m+1 from previous to make the value
+        for k in range(2,len(tri)):
+            print(tri[k])
+            temp= tri[k-1]
+            for m in range(len(temp)-1):
+                tri[k][m+1]=temp[m]+temp[m+1]
+
+        return tri
+
